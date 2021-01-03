@@ -4,6 +4,8 @@ export const Navigation = styled.div`
   display: flex;
   flex-direction: row;
   background-color: #F2F1EB;
+  text-decoration: none;
+
 `
 export const NavLi = styled.li`
   text-decoration: none;

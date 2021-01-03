@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import Root from './views/Root';
 import Menu from './components/Menu/Menu';
 import Footer from './components/Footer/Footer';
-import CharactersList from './views/Mainpage/components/CharactersList';
+import CharactersList from './views/Characters/CharactersList';
 
 function App() {
   return (

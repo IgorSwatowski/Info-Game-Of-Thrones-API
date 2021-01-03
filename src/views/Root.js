@@ -1,8 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-
-// Components ============================
-import CharactersList from './Mainpage/components/CharactersList';
 
 const Wrapper = styled.div`
   display: flex;
