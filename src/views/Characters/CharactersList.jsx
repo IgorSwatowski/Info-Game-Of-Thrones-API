@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { api, endpoints } from 'api';
+import { api, endpoints } from '../../api';
+
+//Components ========================
+import Character from './Character';
 
 const CharactersList = () => {
-  const [characters] = useState([]);
+  const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
     api.get(endpoints.characters)
       .then(({ data } ) => {
-        console.log(data)
+        setCharacters(data)
       })
       .catch((error) => {
         console.log(error)
@@ -17,7 +20,7 @@ const CharactersList = () => {
   return (
     <div>
       {characters.length 
-      ? characters.map(character => <div key={character.name} />)
+      ? characters.map(character => <Character key={character.name} characterData={character} />)
       : <h2>There is nothing</h2>}
     </div>
   );
