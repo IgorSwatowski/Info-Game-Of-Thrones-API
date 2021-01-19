@@ -27,12 +27,26 @@ export const CharacterGender = styled.li`
     justify-content: center;
     align-items: center;
     font-size: 15px;
-    margin-top: 12px;
+    margin-top: 42px;
     color: #fff;
     list-style: none;
+    border: 1px solid #fff;
+    padding: 12px;
+    width: 320px;
 `
-
-const Character = ({ characterData: { name, gender} }) => {
+export const CharacterHouse = styled.li`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  margin-top: 12px;
+  color: #fff;
+  list-style: none;
+  border: 1px solid #fff;
+  padding: 12px;
+  width: 320px;
+`
+const Character = ({ characterData: { name, gender, allegiance} }) => {
 
   return (
     <Wrapper>
@@ -41,6 +55,9 @@ const Character = ({ characterData: { name, gender} }) => {
         <CharacterGender>
           {gender ? <div>Gender: {gender}</div> : <div>Gender: It's not definded on outside API</div>}
         </CharacterGender>
+        <CharacterHouse>
+          {gender ? <div>Allegiance: {allegiance}</div> : <div>House: It's not definded on outside API</div>}
+        </CharacterHouse>
       </CharacterSimple>
     </Wrapper>
   );
