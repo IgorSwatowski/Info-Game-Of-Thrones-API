@@ -46,17 +46,28 @@ export const CharacterHouse = styled.li`
   padding: 12px;
   width: 320px;
 `
-const Character = ({ characterData: { name, gender, allegiance} }) => {
+
+export const CharacterImage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 34px;
+`
+
+const Character = ({ characterData: { name, gender, allegiance, image} }) => {
 
   return (
     <Wrapper>
       <CharacterSimple>
         {name}
+        <CharacterImage>
+          {image ? <img src={image} alt="photo" style={{width: '240px', height: '300px'}}/> : <div>This person not have photo</div>}
+        </CharacterImage>
         <CharacterGender>
           {gender ? <div>Gender: {gender}</div> : <div>Gender: It's not definded on outside API</div>}
         </CharacterGender>
         <CharacterHouse>
-          {gender ? <div>Allegiance: {allegiance}</div> : <div>House: It's not definded on outside API</div>}
+          {gender ? <div>Allegiance: {allegiance}</div> : <div>Allegiance: It's not definded on outside API</div>}
         </CharacterHouse>
       </CharacterSimple>
     </Wrapper>
