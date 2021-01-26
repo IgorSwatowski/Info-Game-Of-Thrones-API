@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { api, endpoints } from '../../api';
-import ReactPaginate from 'react-paginate';
 
-//Components ========================
+// Components =============================
+import Pagination from '../../components/Pagination/Pagination';
 import CharacterListItem from '../CharacterListItem/CharacterListItem';
 
 const CharactersList = () => {
@@ -22,34 +22,31 @@ const CharactersList = () => {
 
   const charactersPerPage = 5;
   const pagesVisited = pageNumber * charactersPerPage;
-
-  const displayCharacter = characters
-    .slice(pagesVisited, pagesVisited + charactersPerPage)
-    .map((character) => {
-      return (
-        <CharacterListItem key={character.name} characterData={character} />
-      )
-    })
-
-  const pageCount = Math.ceil(characters.length / charactersPerPage);
-  
+    
+    
   const changePage = ({ selected }) => {
-    setPageNumber(selected);
+      setPageNumber(selected);
   }
+  
+  const displayCharacter = characters
+  .slice(pagesVisited, pagesVisited + charactersPerPage)
+  .map((character) => {
+    return (
+      <CharacterListItem key={character.name} characterData={character} />
+    )
+  })
 
   return (
     <div>
       {displayCharacter}
-      <ReactPaginate
-          previousLabel={"Previous"}
-          nextLabel={"Next"}
-          pageCount={pageCount}
-          onPageChange={changePage}
+      <Pagination 
+        previousLabel={'Previous'}
+        nextLabel={'Next'}
+        onPageChange={changePage}
       />
     </div>
   );
 }
 
-CharactersList.propTypes = {};
 
 export default CharactersList;

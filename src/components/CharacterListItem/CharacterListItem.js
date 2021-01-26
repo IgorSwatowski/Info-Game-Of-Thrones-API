@@ -8,7 +8,7 @@ import {
   CharacterGender,
   CharacterHouse,
   CharacterImage  
-} from './characterListItemStyles/characterListItemStyles';
+} from './characterListItemStyles';
 
 const CharacterListItem = ({ characterData: { name, gender, allegiance, image} }) => {
 

@@ -4,7 +4,7 @@ import React from 'react';
 import {
   Wrapper,
   InfoTop,
-} from './homeStyles/homeStyles';
+} from './homeStyles';
 
 const Home = () => {
   return (
