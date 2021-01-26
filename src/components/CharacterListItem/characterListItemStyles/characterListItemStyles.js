@@ -1,5 +1,3 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
@@ -53,31 +51,3 @@ export const CharacterImage = styled.div`
   align-items: center;
   margin-top: 34px;
 `
-
-const Character = ({ characterData: { name, gender, allegiance, image} }) => {
-
-  return (
-    <Wrapper>
-      <CharacterSimple>
-        {name}
-        <CharacterImage>
-          {image ? <img src={image} alt="photo" style={{width: '240px', height: '300px'}}/> : <div>This person not have photo</div>}
-        </CharacterImage>
-        <CharacterGender>
-          {gender ? <div>Gender: {gender}</div> : <div>Gender: It's not definded on outside API</div>}
-        </CharacterGender>
-        <CharacterHouse>
-          {gender ? <div>Allegiance: {allegiance}</div> : <div>Allegiance: It's not definded on outside API</div>}
-        </CharacterHouse>
-      </CharacterSimple>
-    </Wrapper>
-  );
-};
-
-Character.propTypes = {
-  characterData: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-  }).isRequired,
-};
-
-export default Character;

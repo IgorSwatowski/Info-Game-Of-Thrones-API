@@ -5,6 +5,8 @@ export const api = axios.create({
 })
 
 export const endpoints = {
+    image: 'book/characters/image',
     characters: 'book/characters',
-    gender: 'book/characters/gender'
+    gender: 'book/characters/gender',
+    allegiance: 'book/characters/allegiance',
 }

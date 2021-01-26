@@ -1,21 +1,32 @@
-import React from 'react';
-import styled from 'styled-components';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  padding-top: 140px;
-`
-const InfoTop = styled.h2`
-  font-family: 'Arial';
-`
+// Components =======================
+import Home from '../views/Home/Home';
+import Menu from '../components/Menu/Menu';
+import Footer from '../components/Footer/Footer';
+import CharactersList from '../components/CharactersList/CharactersList';
 
-const Root = () => {
+function Root() {
   return (
-    <Wrapper>
-      <InfoTop>I welcome you to Game Of Thrones info database :)</InfoTop>
-    </Wrapper>
+    <Router>
+      <Menu />
+        <>
+          <Switch>
+            <Route path="/characters">
+              <CharactersList />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+          <Footer/>
+        </>
+    </Router>
   );
-};
+}
 
 export default Root;

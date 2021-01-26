@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-
 // Components ========================
 import { Wrapper, FooterText } from './styles/FooterStyles';
 
